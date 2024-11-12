@@ -54,14 +54,20 @@ import tkinter
 #     fenetre.mainloop()
 
 
+class horloge:
+     
+    heure = 0
 
-def mise_a_jour():
+    def __init__(self):
+        heure = time.strftime("%H:%M:%S")
+        self.heure = heure
+    def mise_a_jour(self):
 
-     rep = 0
+        rep = 0
     
-     while rep != 10:
-         heure = time.strftime("%H:%M:%S")
-         print(heure)
-         time.sleep(1)
-         rep = rep +1
-         os.system('cls' if os.name == 'nt' else 'clear')
+        while rep != 10:
+            self.heure = time.strftime("%H:%M:%S")
+            print(self.heure)
+            time.sleep(1)
+            rep = rep +1
+            os.system('cls' if os.name == 'nt' else 'clear')

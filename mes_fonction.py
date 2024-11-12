@@ -1,15 +1,41 @@
 import random
 
+class calcul:
+    
+    def __init__(self):
+        montant = int(input('Montant : '))
+        remise = int(input('La remise : '))
+        self.montant = montant
+        self.remise = remise
 
-def calcul_remise(_montant, _remise): 
-    # print(_montant)
-    # print(_remise)
-    resultat = _montant - _montant * (_remise/100)
-    return print("Le prix de l'article après la remise est de : " + str(resultat) + " €")
+    def calcul_remise(self):
+        resultat = self.montant - self.montant * (self.remise/100)
+        return print("Le prix de l'article après la remise est de : " + str(resultat) + " €")
+    
 
-def lancer_de_de(_mama):
-    resultat = random.randint(0, _mama)
-    return print("le dé donne : " + str(resultat))
+# def calcul_remise(_montant, _remise): 
+#     # print(_montant)
+#     # print(_remise)
+#     resultat = _montant - _montant * (_remise/100)
+#     return print("Le prix de l'article après la remise est de : " + str(resultat) + " €")
+
+class lancer_de_de():
+
+    def __init__(self):
+        de = int(input("choisisé le nombre de face du dé: "))
+        fois = int(input("choisissez le nombre de fois que vous voulez lancer le dé: "))
+        self.de = de
+        self.fois = fois
+
+    def destin(self):
+        i = 1
+        while i <= self.fois:
+            resultat = random.randint(0, self.de)
+            print("le dé donne :" + str(resultat))
+            i = i + 1
+# def lancer_de_de(_mama):
+#     resultat = random.randint(0, _mama)
+#     return print("le dé donne : " + str(resultat))
 
 def affiche_menu():
     print("**************************************")
@@ -29,22 +55,40 @@ def fin():
     i = "0"
     return i
 
-def jeu_du_juste_prix():
-    prix = int(input("donner un prix : "))
+class jeu_du_juste_prix():
+    prix = 0
+    juste_prix = 0
+    def __init__(self):
+        self.prix = int(input("donner un prix : "))
+        self.juste_prix = random.randint(100,10000)
 
-    juste_prix = random.randint(100,10000)
+    def le_prix(self):
+        while self.prix != self.juste_prix:
+            if self.prix > self.juste_prix:
+                print("c'est moins")
+                self.prix = int(input("donner un nouveau prix : "))
+            elif self.prix < self.juste_prix:
+                print("c'est plus")
+                self.prix = int(input("donner un nouveau prix : "))
+        if self.prix == self.juste_prix:
+            print("bravo toi avoir trouver prix juste de : " + str(self.juste_prix))
 
-    while prix != juste_prix:
-        if prix > juste_prix:
-            print("c'est moins")
-            prix = int(input("donner un nouveau prix : "))
-        elif prix < juste_prix:
-            print("c'est plus")
-            prix = int(input("donner un nouveau prix : "))
+# def jeu_du_juste_prix():
+#     prix = int(input("donner un prix : "))
+
+#     juste_prix = random.randint(100,10000)
+
+#     while prix != juste_prix:
+#         if prix > juste_prix:
+#             print("c'est moins")
+#             prix = int(input("donner un nouveau prix : "))
+#         elif prix < juste_prix:
+#             print("c'est plus")
+#             prix = int(input("donner un nouveau prix : "))
     
 
-    if prix == juste_prix:
-        print("bravo toi avoir trouver prix juste de : " + str(juste_prix))
+#     if prix == juste_prix:
+#         print("bravo toi avoir trouver prix juste de : " + str(juste_prix))
 
 
 

@@ -1,6 +1,6 @@
 # from mon-document_qui_stock import les élément que je souhaite utiliser
 from mes_fonction import *
-from horloge_numérique import mise_a_jour
+from horloge_numérique import horloge
 from pendu import jeux_du_pendu
 from Cesar import codeur_cesar
 
@@ -10,17 +10,18 @@ choix = affiche_menu()
 while choix != "0":
     match (choix):
         case "1":
-            montant = int(input('Montant : '))
-            remise = int(input('La remise : '))
-            calcul_remise(montant, remise)
+            resultat = calcul()
+            resultat.calcul_remise()
         case "2":
-            mama = int(input("choisisé le nombre de face du dé: "))
-            lancer_de_de(mama)
+            resultat = lancer_de_de()
+            resultat.destin()
             # print("Lancé de dé ...") # Choix du nb de faces par l'utilisateur
         case "3":
-            jeu_du_juste_prix()
+            resultat = jeu_du_juste_prix()
+            resultat.le_prix()
         case "4":
-            mise_a_jour()
+            heure = horloge()
+            heure.mise_a_jour()
         case "5":
             jeux_du_pendu()
         case "6":
