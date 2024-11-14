@@ -1,8 +1,8 @@
 # from mon-document_qui_stock import les élément que je souhaite utiliser
 from mes_fonction import *
 from horloge_numérique import horloge
-from pendu import jeupendu
-from Cesar import codeur
+from pendu import jeux_du_pendu
+from Cesar import codeur_cesar
 
 
 choix = affiche_menu()
@@ -23,11 +23,9 @@ while choix != "0":
             heure = horloge()
             heure.mise_a_jour()
         case "5":
-            jeux = jeupendu()
-            jeux.jeux_du_pendu()
+            jeux_du_pendu()
         case "6":
-            jeux = codeur()
-            jeux.affichage()
+            codeur_cesar()
         case "7":
             print("Lancement du Gestionnaire de contact ...")
     
