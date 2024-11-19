@@ -37,19 +37,6 @@ class lancer_de_de():
 #     resultat = random.randint(0, _mama)
 #     return print("le dé donne : " + str(resultat))
 
-def affiche_menu():
-    print("**************************************")
-    print("Menu de l'application :")
-    print("0. Quitter")
-    print("1. Calculer une remise en %")
-    print("2. Lancé de dé")
-    print("3. Jeu du juste prix")
-    print("4. Horloge numérique (HH:MM:SS qui défile)")
-    print("5. Jeu du pendu")
-    print("6. Décodeur César")
-    print("7. Gestionnaire de contact")
-    print("**************************************")
-    return input("Votre choix : ")
 
 def fin():
     i = "0"
