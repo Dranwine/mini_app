@@ -3,7 +3,7 @@ from mes_fonction import *
 from horloge_numérique import horloge
 from pendu import jeupendu
 from Cesar import codeur
-
+from gestionnaire import gestionnaire
 
 class miniapp():
 
@@ -48,11 +48,11 @@ class miniapp():
                     jeux.jeux_du_pendu()
                 case "6":
                     jeux = codeur()
-                    jeux.affichage()
+                    jeux.decision()
                 case "7":
-                    print("Lancement du Gestionnaire de contact ...")
+                    contact = gestionnaire()
+                    contact.action()
 
-           
             self.rep = (input("veux tu revenir au menu ? oui ou non : "))
 
             if self.rep == "oui":

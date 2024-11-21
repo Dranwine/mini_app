@@ -6,29 +6,51 @@ class codeur():
     lettre = 0
     message_chiffre = 0
 
-    def __init__(self):
+    def __init__(self,):
         self.liste = ['a', 'b', 'c', 'd', 'e','f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-        self.message = input("enter ici votre message à chiffrer : ")
-        self.clef =  int(input("donne votre clef de chiffrement de 26 ou moins :"))
         self.message_chiffre = str()
 
-    def codeur_cesar(self,liste):
+    def codeur_cesar(self):
 
-        for x in range(len(liste)):
-            liste.append(liste[x])
+        for x in range(len(self.liste)):
+            self.liste.append(self.liste[x])
 
-    def chiffrement(self, lettre):
+    def chiffrement(self, _lettre):
         for i in range(len(self.liste)):
-            if self.liste[i] == lettre:
+            if self.liste[i] == _lettre:
                 return str(self.liste[i+self.clef])
             elif self.liste[i] == ' ':
                 return ' ' 
         return '?' 
-    def affichage(self):
+    
+    def dechiffrement(self, _lettre):
+        for i in range(len(self.liste)):
+            if self.liste[i] == _lettre:
+                return str(self.liste[i-self.clef])
+            elif self.liste[i] == ' ':
+                return ' ' 
+        return '?' 
+    
+    def affichage_chiffrement(self):
         for lettre in self.message:
             self.message_chiffre += self.chiffrement(lettre)
-        print(self.message_chiffre)
+        return print(self.message_chiffre)
 
+    def affichage_dechiffrement(self):
+        for lettre in self.message:
+            self.message_chiffre += self.dechiffrement(lettre)
+        return print(self.message_chiffre)
+
+    def decision(self):
+        elu =int(input("tu veux chiffrer tape 1, tu vexu déchiffrer tape 2: "))
+        if elu == 1:
+            self.message = input("enter ici votre message à chiffrer : ")
+            self.clef =  int(input("donne votre clef de chiffrement de 26 ou moins :"))
+            self.affichage_chiffrement()
+        elif elu == 2:
+            self.message = input("enter ici votre message à déchiffrer : ")
+            self.clef =  int(input("donne votre clef de chiffrement de 26 ou moins :"))
+            self.affichage_dechiffrement()
 
     # def codeur_cesar():
 
