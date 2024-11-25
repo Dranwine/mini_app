@@ -1,16 +1,17 @@
 import random
 
 class calcul:
-    
+    montant = 0
+    remise = 0
     def __init__(self):
         montant = int(input('Montant : '))
         remise = int(input('La remise : '))
         self.montant = montant
         self.remise = remise
+        self.resultat = self.montant - self.montant * (self.remise/100)
 
     def calcul_remise(self):
-        resultat = self.montant - self.montant * (self.remise/100)
-        return print("Le prix de l'article après la remise est de : " + str(resultat) + " €")
+        return print("Le prix de l'article après la remise est de : " + str(self.resultat) + " €")
     
 
 # def calcul_remise(_montant, _remise): 
@@ -20,18 +21,17 @@ class calcul:
 #     return print("Le prix de l'article après la remise est de : " + str(resultat) + " €")
 
 class lancer_de_de():
-
+    de = 0
+    fois = 0
     def __init__(self):
-        de = int(input("choisisé le nombre de face du dé: "))
-        fois = int(input("choisissez le nombre de fois que vous voulez lancer le dé: "))
-        self.de = de
-        self.fois = fois
+        self.de = int(input("choisisé le nombre de face du dé: "))
+        self.fois = int(input("choisissez le nombre de fois que vous voulez lancer le dé: "))
+        self.resultat = random.randint(0, self.de)
 
     def destin(self):
         i = 1
         while i <= self.fois:
-            resultat = random.randint(0, self.de)
-            print("le dé donne :" + str(resultat))
+            print("le dé donne :" + str(self.resultat))
             i = i + 1
 # def lancer_de_de(_mama):
 #     resultat = random.randint(0, _mama)

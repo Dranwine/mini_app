@@ -36,7 +36,6 @@ class miniapp():
                 case "2":
                     resultat = lancer_de_de()
                     resultat.destin()
-                    
                 case "3":
                     resultat = jeu_du_juste_prix()
                     resultat.le_prix()
@@ -59,4 +58,4 @@ class miniapp():
                 self.choix = self.affiche_menu()
             elif self.rep == "non":
                 self.choix = fin()
-            print("*** FIN DU PROGRAMME ***")    
+                print("*** FIN DU PROGRAMME ***")    
